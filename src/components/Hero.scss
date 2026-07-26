@@ -75,6 +75,32 @@
     line-height: 1.05;
     margin-bottom: 24px;
     text-transform: uppercase;
+    span {
+      position: relative;
+      display: inline-block;
+      color: $gold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+
+        width: 80%;
+        height: 4px;
+        border-radius: 10px;
+
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #caa24a 15%,
+          #f7dc8b 50%,
+          #caa24a 85%,
+          transparent 100%
+        );
+      }
+    }
   }
 
   p {

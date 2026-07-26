@@ -20,7 +20,7 @@ const Hero = () => {
             <h1>
               zauq spices
               <br />
-              are Coming Soon
+              are <span>Coming Soon</span>
             </h1>
 
             <p>
