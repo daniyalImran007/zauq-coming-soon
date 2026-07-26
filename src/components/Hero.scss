@@ -84,21 +84,23 @@
         content: "";
         position: absolute;
         left: 50%;
-        bottom: -10px;
+        bottom: -12px;
         transform: translateX(-50%);
 
-        width: 80%;
+        width: 90%;
         height: 4px;
-        border-radius: 10px;
+        border-radius: 999px;
 
         background: linear-gradient(
           90deg,
           transparent 0%,
-          #caa24a 15%,
+          #caa24a 20%,
           #f7dc8b 50%,
-          #caa24a 85%,
+          #caa24a 80%,
           transparent 100%
         );
+
+        filter: drop-shadow(0 0 8px rgba(247, 220, 139, 0.9));
       }
     }
   }
