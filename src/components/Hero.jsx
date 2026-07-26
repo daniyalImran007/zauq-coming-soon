@@ -11,7 +11,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
     >
-      <section className="hero" style={{ backgroundImage: `url(${hero})` }}>
+      <section className="hero">
         <div className="overlay"></div>
 
         <div className="container hero-content">
