@@ -1,5 +1,4 @@
 import "./Hero.scss";
-import hero from "../assets/images/hero.png";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 
