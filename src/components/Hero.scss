@@ -15,9 +15,16 @@
   .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-  }
+    width: 60%;
 
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.72) 40%,
+      rgba(0, 0, 0, 0.35) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
   .hero-content {
     @include container;
 
@@ -162,7 +169,24 @@
   .hero {
     background-image: url("../assets/images/hero-mobile.png");
     min-height: auto;
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
 
+      width: 100%;
+      height: 55%;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.55) 65%,
+        rgba(0, 0, 0, 0.15) 90%,
+        transparent 100%
+      );
+    }
     .hero-content {
       min-height: auto;
       padding: 120px 0 70px;
