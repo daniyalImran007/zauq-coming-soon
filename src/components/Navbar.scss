@@ -1,0 +1,63 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  .container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 32px 0;
+  }
+
+  .logo {
+    width: 180px;
+    transition: 0.35s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    span {
+      color: $gold;
+      font-size: 18px;
+    }
+
+    a {
+      transition: 0.3s;
+      width: 42px;
+      height: 42px;
+
+      border: 1px solid $gold;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: $gold;
+      font-size: 18px;
+
+      transition: 0.3s;
+
+      &:hover {
+        background: $gold;
+        color: $white;
+        transform: translateY(-4px) rotate(8deg) scale(1.1);
+      }
+    }
+  }
+}

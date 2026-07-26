@@ -1,0 +1,104 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.about {
+  position: relative;
+  padding: 120px 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #3b2a18;
+  text-align: center;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 248, 235, 0.15);
+  }
+
+  .container {
+    @include container;
+    position: relative;
+    z-index: 2;
+  }
+
+  .sub-title {
+    color: #8b5e34;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  h2 {
+    margin: 20px 0;
+    font-size: 56px;
+    line-height: 1.15;
+  }
+
+  p {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 250px;
+    padding: 35px;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(8px);
+
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      color: $gold;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+
+    h2 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .card {
+      width: 100%;
+    }
+  }
+}
