@@ -51,7 +51,7 @@ const Hero = () => {
             <br />
             <span className="heading">Premium Pakistani Spices</span>
             <h1>
-              <span className="title">ZAUQ SPICES are</span>
+              <span className="title">ZauQ Spices are</span>
 
               <span className="typing-wrapper">
                 <span className="typing">{displayText}</span>
