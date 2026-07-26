@@ -1,8 +1,41 @@
 import "./Hero.scss";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
+import { useEffect, useState } from "react";
 
+const TEXT = "Coming Soon...";
 const Hero = () => {
+  const [displayText, setDisplayText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    let timeout;
+
+    const type = () => {
+      if (index <= TEXT.length) {
+        setDisplayText(TEXT.slice(0, index));
+        index++;
+
+        timeout = setTimeout(type, 180); // Typing speed
+      } else {
+        // Keep full text visible
+        timeout = setTimeout(() => {
+          setDisplayText("");
+
+          // Restart after blank pause
+          timeout = setTimeout(() => {
+            index = 0;
+            type();
+          }, 500);
+        }, 1500);
+      }
+    };
+
+    type();
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <motion.div
       className="left"
@@ -15,14 +48,16 @@ const Hero = () => {
 
         <div className="container hero-content">
           <div className="left">
+            <br />
             <span className="heading">Premium Pakistani Spices</span>
-
             <h1>
-              zauq spices
-              <br />
-              are <span>Coming Soon</span>
-            </h1>
+              <span className="title">ZAUQ SPICES are</span>
 
+              <span className="typing-wrapper">
+                <span className="typing">{displayText}</span>
+              </span>
+            </h1>
+            <br />
             <p>
               Crafted with purity. Packed with authentic flavor. We are
               preparing something truly special.

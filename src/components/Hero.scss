@@ -78,36 +78,85 @@
   }
 
   h1 {
-    font-size: 72px;
-    line-height: 1.05;
-    margin-bottom: 24px;
+    line-height: 1.1;
     text-transform: uppercase;
-    span {
+
+    .title {
+      display: block;
+
+      //   font-family: "Cormorant Garamond", serif;
+      font-size: 56px;
+      font-weight: 600;
+      //   font-style: italic;
+      letter-spacing: 2px;
+
+      color: $white;
+    }
+
+    .typing-wrapper {
+      display: block;
+      height: 2.2em; // Reserve space
+      margin-top: 12px;
+    }
+
+    .typing {
       position: relative;
       display: inline-block;
-      color: $gold;
 
-      &::after {
+      font-family: "Brittany Signature", cursive;
+      font-weight: 400;
+      font-size: 76px;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 2px;
+
+      color: #f7dc8b;
+
+      text-shadow:
+        0 0 6px rgba(247, 220, 139, 0.45),
+        0 0 14px rgba(202, 162, 74, 0.3),
+        0 0 28px rgba(202, 162, 74, 0.18);
+
+      &:not(:empty)::before {
         content: "";
         position: absolute;
-        left: 50%;
-        bottom: -12px;
-        transform: translateX(-50%);
+        left: 0;
+        bottom: -10px;
 
-        width: 90%;
-        height: 4px;
+        width: 100%;
+        height: 3px;
         border-radius: 999px;
 
         background: linear-gradient(
           90deg,
-          transparent 0%,
-          #caa24a 20%,
-          #f7dc8b 50%,
-          #caa24a 80%,
-          transparent 100%
+          #f7dc8b,
+          #d9b25f,
+          rgba(217, 178, 95, 0.25)
         );
 
-        filter: drop-shadow(0 0 8px rgba(247, 220, 139, 0.9));
+        box-shadow:
+          0 0 8px rgba(247, 220, 139, 0.45),
+          0 0 18px rgba(202, 162, 74, 0.25);
+
+        animation: underlineGrow 0.25s ease-out;
+      }
+
+      &::after {
+        content: "_";
+        color: #f7dc8b;
+        animation: blink 0.8s infinite;
+      }
+    }
+
+    @keyframes underlineGrow {
+      from {
+        transform: scaleX(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scaleX(1);
+        opacity: 1;
       }
     }
   }
@@ -203,6 +252,18 @@
     h1 {
       font-size: 40px;
     }
+    .typing-wrapper {
+      min-height: calc(2 * 1.2em);
+    }
+
+    .typing {
+      display: block;
+      font-family: "Brittany Signature", cursive;
+      white-space: nowrap;
+      font-size: 42px;
+      line-height: 1.2;
+      text-align: center;
+    }
 
     p {
       max-width: 100%;
@@ -226,6 +287,18 @@
   .hero {
     h1 {
       font-size: 34px;
+    }
+    .typing-wrapper {
+      min-height: calc(2 * 1.2em);
+    }
+
+    .typing {
+      display: block;
+      white-space: nowrap;
+      font-family: "Brittany Signature", cursive;
+      font-size: 34px !important;
+      line-height: 1.2;
+      text-align: center;
     }
 
     .heading,
