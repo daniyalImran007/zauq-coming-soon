@@ -7,7 +7,6 @@ const About = () => {
   return (
     <motion.section
       className="about"
-      style={{ backgroundImage: `url(${aboutBg})` }}
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
