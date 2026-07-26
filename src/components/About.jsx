@@ -1,5 +1,4 @@
 import "./About.scss";
-import aboutBg from "../assets/images/about-bg.png";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 import { stagger } from "../utils/animations";
